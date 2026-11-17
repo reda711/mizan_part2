@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Al Andalous – Back-office</title>
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<header class="top">
+  <h1>Bijouterie Al Andalous</h1>
+  <div class="tools">
+    <select id="currency" aria-label="Devise"><option>MAD</option><option>EUR</option><option>USD</option></select>
+    <button id="theme" type="button">Thème</button>
+  </div>
+</header>
+<main>
+  <section class="bar" aria-label="Filtres">
+    <input id="search" type="search" placeholder="Rechercher par titre" aria-label="Rechercher par titre">
+    <select id="filter" aria-label="Filtrer par statut">
+      <option value="all">Tous les statuts</option><option value="disponible">Disponible</option>
+      <option value="reserve">Réservé</option><option value="vendu">Vendu</option><option value="favoris">Favoris</option>
+    </select>
+    <select id="sort" aria-label="Trier">
+      <option value="date-desc">Plus récents</option><option value="date-asc">Plus anciens</option>
+      <option value="title-asc">Titre A→Z</option><option value="price-asc">Prix croissant</option><option value="price-desc">Prix décroissant</option>
+    </select>
+    <button id="refresh" type="button">Rafraîchir</button>
+    <button id="new" type="button" class="primary">Nouvel article</button>
+  </section>
+  <div id="banner" role="status" hidden></div>
+  <div id="list" aria-live="polite"></div>
+  <details class="net"><summary>Panneau réseau</summary><ul id="netlog"></ul></details>
+</main>
+<div id="toasts" role="status" aria-live="polite"></div>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
